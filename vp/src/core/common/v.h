@@ -489,6 +489,11 @@ class VExtension {
 			default:
 				v_assert(false);
 		}
+		if (elem_signed > upper_bound || elem_signed < lower_bound)
+		{
+			iss.csrs.vxsat.fields.vxsat |= true;
+		}
+		
 		return std::clamp(elem_signed, lower_bound, upper_bound);
 	}
 
