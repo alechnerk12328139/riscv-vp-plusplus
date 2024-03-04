@@ -489,11 +489,10 @@ class VExtension {
 			default:
 				v_assert(false);
 		}
-		if (elem_signed > upper_bound || elem_signed < lower_bound)
-		{
+		if (elem_signed > upper_bound || elem_signed < lower_bound) {
 			iss.csrs.vxsat.fields.vxsat |= true;
 		}
-		
+
 		return std::clamp(elem_signed, lower_bound, upper_bound);
 	}
 
@@ -1088,7 +1087,7 @@ class VExtension {
 			// TODO necessary ?
 			s_op_reg_t op1_s = signExtend(op1, op1_eew);
 			s_op_reg_t op2_s = signExtend(op2, op2_eew);
-			return op1_s == 0 ? op2_s :op2_s % op1_s;
+			return op1_s == 0 ? op2_s : op2_s % op1_s;
 		};
 	}
 
